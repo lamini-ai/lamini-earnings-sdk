@@ -15,7 +15,7 @@ In this SDK, we include tutorials for achieving high-quality results with Langua
 1. [Llama3](01_llama3/README.md) - generate text with Llama3, a powerful LLM.
 2. [Eval](02_eval/README.md) - evaluate the quality of your LLM.
 3. [Prompt Tuning](03_prompt_tuning/README.md) - improve the quality of your LLM by tuning the prompts you use.
-4. [Retrieval Augmented Generation (RAG) Tuning](04_rag_tuning/README.md) - improve the quality of your LLM by tuning the retrieval component.
+4. [RAG Tuning](04_rag_tuning/README.md) - improve the quality of your LLM by tuning the retrieval component.
 5. [Data Pipeline](05_data_pipeline/README.md) - prepare your data for training an LLM.
 6. [Fine Tuning](06_fine_tuning/README.md) - fine tune an LLM on your data.
 
@@ -45,7 +45,7 @@ pip install --upgrade lamini
 
 ### GitHub Repository
 ---
-The source code for SDK can be found on GitHub at [lamini-ai/lamini-sdk](https://github.com/lamini-ai/lamini-sdk). Feel free to explore and contribute!
+The source code for SDK can be found on GitHub at [lamini-ai/lamini-earnings-sdk](https://github.com/lamini-ai/lamini-earnings-sdk). Feel free to explore and contribute!
 
 ### About Lamini
 ---
