@@ -11,7 +11,7 @@ This allows you to quickly iterate on prompts, rag, and fientuned models.
 
 Create a test set by selecting a set of prompts and their corresponding answers.
 
-We include an example test set at (./data/golden_test_set.jsonl)[./data/golden_test_set.jsonl].
+We include an example test set at [../data/golden_test_set.jsonl](../data/golden_test_set.jsonl).
 
 ```json
 {"ticker": "CENT", "date": "Aug 4, 2021, 4:35 p.m. ET", "q": "2021-Q3", "question": "What is the optimal leverage range for the company in the event of M&A", "answer": " The optimal leverage range for the company in the event of M&A is between 3 to 3.5 times. For the right deal, the company would be willing to lever up into the low 4s, and then quickly deliver back down to that three to 3.5 range.", "has_value": true, "value": 3.5, "units": "times"}
