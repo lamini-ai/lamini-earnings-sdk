@@ -122,5 +122,33 @@ The question generator can be controlled by editing it's prompt.
         return prompt
 ```
 
+## AnswerGenerator
 
+The answer generator is similar, just with a different prompt.  You can control it by editing the prompt.
+
+```python
+    def make_prompt(self, chunk):
+        prompt = "<|begin_of_text|><|start_header_id|>user<|end_header_id|>"
+
+        prompt += (
+            "You are a financial analyst with extensive experience at Goldman Sachs."
+        )
+        prompt += "You are reading the earnings call transcript for the following company:\n\n"
+        prompt += "====================\n\n"
+        prompt += get_company_info(chunk) + "\n"
+        prompt += "====================\n\n"
+        prompt += (
+            "You are reading the following section of the earnings call transcript:\n\n"
+        )
+        prompt += "====================\n\n"
+        prompt += chunk.data["transcript"]
+        prompt += "====================\n\n"
+        prompt += "Consider the numbers in the transscript. "
+        prompt += "Ask three questions about the numbers in the transcript that require precise answers. "
+        prompt += "Only ask questions that can be answered using the transcript."
+        prompt += "<|eot_id|>"
+        prompt += "<|start_header_id|>assistant<|end_header_id|>"
+
+        return prompt
+```
 
