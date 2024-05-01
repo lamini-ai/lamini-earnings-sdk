@@ -72,3 +72,7 @@ Eg: llm.train(dataset_id='0713f8cfa5746a0897079e7f249a048deb653cf7e849d6fc26f3d2
 Training job submitted! Check status of job 6367 here: https://app.lamini.ai/train/6367
 ```
 
+The page lets you monitor all of your jobs, view eval results, view loss curves, and logs.  Jobs will automatically use all of the GPUs in your Lamini cluster.
+
+![image](https://github.com/lamini-ai/lamini-earnings-sdk/assets/3401278/f7db9547-88d1-4983-8217-f21c3a3f3da0)
+
