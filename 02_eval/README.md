@@ -9,7 +9,7 @@ This allows you to quickly iterate on prompts, rag, and fientuned models.
 
 ## Creating a test set
 
-Create a test set by selecting a set of prompts and their corresponding answers. A good test set has between 20 and 100 examples in it.  More examples increases the accuracy, but it takes longer for a human to manually review.
+Create a test set by selecting a set of prompts and their corresponding answers. A good test set has between 20 and 100 examples in it.  More examples increases the accuracy, but it takes longer for a human to write and edit.
 
 We include an example test set at [../data/golden_test_set.jsonl](../data/golden_test_set.jsonl).
 
