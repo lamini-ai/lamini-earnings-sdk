@@ -12,5 +12,12 @@ set -Eeuoxa pipefail
 # Get the directory of this script
 LOCAL_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-PYTHONPATH="${LOCAL_DIRECTORY}/..:${LOCAL_DIRECTORY}/../../03_prompt_tuning" python3 "${LOCAL_DIRECTORY}/../lamini_eval/eval.py" $@
+# Build the container
+$LOCAL_DIRECTORY/../../scripts/build.sh
+
+docker run -it \
+    -v ~/.lamini:/root/.lamini \
+    -v $LOCAL_DIRECTORY/../../data:/app/lamini-earnings-sdk/data \
+    --entrypoint /app/lamini-earnings-sdk/03_prompt_tuning/scripts/start.sh \
+    lamini-earnings-sdk:latest $@
 
