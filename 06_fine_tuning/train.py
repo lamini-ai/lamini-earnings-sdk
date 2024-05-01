@@ -2,17 +2,26 @@ from lamini import Lamini
 
 import jsonlines
 
+
 def main():
     llm = Lamini(model_name="meta-llama/Meta-Llama-3-8B-Instruct")
 
-    dataset = list(load_training_data()) * 3
+    dataset = list(load_training_data()) * 10
 
-    llm.train(data=dataset, finetune_args={"max_steps":100})
+    llm.train(
+        data=dataset,
+        finetune_args={
+            "max_steps": 300,
+            "early_stopping": False,
+            "load_best_model_at_end": False,
+        },
+    )
+
 
 def load_training_data():
     path = "/app/lamini-earnings-sdk/data/generated_q_a.jsonl"
 
-    limit = 100
+    limit = 10
 
     with jsonlines.open(path) as reader:
         for index, obj in enumerate(reader):
@@ -27,9 +36,13 @@ def load_training_data():
                 "output": obj["answer"] + "<|eot_id|>",
             }
 
+
 def make_question(obj):
-    question = f"Consider the following company: {obj['ticker']} and quarter: {obj['q']}. "
+    question = (
+        f"Consider the following company: {obj['ticker']} and quarter: {obj['q']}. "
+    )
     question += obj["question"]
     return question
+
 
 main()
