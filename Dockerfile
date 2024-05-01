@@ -20,6 +20,7 @@ COPY 03_prompt_tuning /app/${PACKAGE_NAME}/03_prompt_tuning
 COPY 04_rag_tuning /app/${PACKAGE_NAME}/04_rag_tuning
 COPY 05_data_pipeline /app/${PACKAGE_NAME}/05_data_pipeline
 COPY 06_fine_tuning /app/${PACKAGE_NAME}/06_fine_tuning
+COPY utils /app/${PACKAGE_NAME}/utils
 
 WORKDIR /app/${PACKAGE_NAME}
 
