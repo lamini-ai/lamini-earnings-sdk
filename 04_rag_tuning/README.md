@@ -35,7 +35,7 @@ Just like prompt tuning, you can tune the RAG and its parameters
             yield PromptObject(prompt=new_prompt, data=prompt.data)
 ```
 
-You can edit the test used to query into the index. [lamini_rag/rag_spot_check.py#L118](lamini_rag/rag_spot_check.py#L118)
+You can edit the text used to query into the index. [lamini_rag/rag_spot_check.py#L118](lamini_rag/rag_spot_check.py#L118)
 
 ```python
     def get_query(self):
