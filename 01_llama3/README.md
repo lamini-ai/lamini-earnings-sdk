@@ -34,25 +34,6 @@ print(llm.generate("How are you?"))
 
 </details>
 
-# Authentication
-
-You can also add your API key as an environment variable.
-
-```bash
-export LAMINI_API_KEY="<YOUR-LAMINI-API-KEY>"
-```
-
-Or you can add the key to a config file ~/.lamini/configure.yaml
-
-```yaml
-key: <YOUR-LAMINI-API-KEY>
-```
-
-Instead of the environment variable, you can also pass your key in Python:
-
-```python
-lamini.api_key = "<YOUR-LAMINI-API-KEY>"
-```
 
 You can run this script to run the entire process setting up a clean environment in Docker.
 

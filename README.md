@@ -33,9 +33,11 @@ about earnings calls from public companies.
 Before you start, please get your Lamini API key and install the python library.
 
 First, get `<YOUR-LAMINI-API-KEY>` at https://app.lamini.ai/account.
-Add the key as an environment variable.
-```
-export LAMINI_API_KEY="<YOUR-LAMINI-API-KEY>"
+Then add the key as an environment variable by creating a config file  `~/.lamini/configure.yaml`
+
+```yaml
+production:
+  key: <YOUR-LAMINI-API-KEY>
 ```
 
 Next, install the Python library.
