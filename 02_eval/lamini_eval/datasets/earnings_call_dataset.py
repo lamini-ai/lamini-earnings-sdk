@@ -93,8 +93,7 @@ class EarningsCallsExample:
 
     def get_response(self, response):
         expected_response = f"Value: {self.example['value']} {self.example['units']}\n"
-
-        if "answer" in response and response["answer"] != "N/A":
+        if "answer" in response and isinstance(response, dict) and response["answer"] != "N/A":
             expected_response += f"Answer: {self.example['answer']}\n"
 
         return expected_response
