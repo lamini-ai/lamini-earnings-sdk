@@ -5,12 +5,12 @@ from typing import Union, Iterator, AsyncIterator
 
 
 class LaminiModelStage(GenerationNode):
-    def __init__(self, dataset):
+    def __init__(self, dataset, model_name="meta-llama/Meta-Llama-3-8B-Instruct",):
         super().__init__(
-            model_name="meta-llama/Meta-Llama-3-8B-Instruct",
+            model_name=model_name,
             max_new_tokens=150,
         )
-
+        self.model_name = model_name
         self.dataset = dataset
 
     def generate(
@@ -23,6 +23,7 @@ class LaminiModelStage(GenerationNode):
 
         results = super().generate(
             prompt,
+            model_name=self.model_name,
             output_type=self.dataset.get_output_type(),
             *args,
             **kwargs,

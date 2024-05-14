@@ -113,7 +113,7 @@ def get_company_info(example):
 class SpotCheckPipeline(GenerationPipeline):
     def __init__(self, dataset):
         super().__init__()
-        self.model_stage = LaminiModelStage(dataset)
+        self.model_stage = LaminiModelStage(dataset=dataset)
 
     def forward(self, x):
         x = self.model_stage(x)
