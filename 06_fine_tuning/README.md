@@ -4,10 +4,10 @@
 
 # Finetuning Llama 3
 
-It's easy to finetue Llama 3 on the question & answer dataset we just created.
+It's easy to finetune Llama 3 on the question & answer dataset we just created.
 
 ```bash
-./scripts/train.sh
+./scripts/fine_tune.sh
 ```
 
 The python is as follows:
@@ -21,12 +21,12 @@ import jsonlines
 def main():
     llm = Lamini(model_name="meta-llama/Meta-Llama-3-8B-Instruct")
 
-    dataset = list(load_training_data())
+    dataset = list(load_tuning_data())
 
-    llm.train(data=dataset,)
+    llm.tune(data=dataset,)
 
 
-def load_training_data():
+def load_tuning_data():
     path = "/app/lamini-earnings-sdk/data/generated_q_a.jsonl"
 
     limit = 100
@@ -58,18 +58,18 @@ main()
 
 # Monitoring your job
 
-After you submit a training job, it is scheduled on the cluster. You can monitor the progress of the job by visiting the link provided in the output of the training script.
+After you submit a tuning job, it is scheduled on the cluster. You can monitor the progress of the job by visiting the link provided in the output of the tuning script.
 
 ```bash
-python3 /app/lamini-earnings-sdk/06_fine_tuning/scripts/../train.py
+python3 /app/lamini-earnings-sdk/06_fine_tuning/scripts/../fine_tune.py
 
 Uploading data....
 Upload to blob completed for data.
 Data pairs uploaded to blob.
 
-Your dataset id is: 0713f8cfa5746a0897079e7f249a048deb653cf7e849d6fc26f3d2dacc5722d0 . Consider using this in the future to train using the same data.
-Eg: llm.train(dataset_id='0713f8cfa5746a0897079e7f249a048deb653cf7e849d6fc26f3d2dacc5722d0')
-Training job submitted! Check status of job 6367 here: https://app.lamini.ai/train/6367
+Your dataset id is: 0713f8cfa5746a0897079e7f249a048deb653cf7e849d6fc26f3d2dacc5722d0 . Consider using this in the future to tune using the same data.
+Eg: llm.tune(dataset_id='0713f8cfa5746a0897079e7f249a048deb653cf7e849d6fc26f3d2dacc5722d0')
+Tuning job submitted! Check status of job 6367 here: https://app.lamini.ai/tune/6367
 ```
 
 The page lets you monitor all of your jobs, view eval results, view loss curves, and logs.  Jobs will automatically use all of the GPUs in your Lamini cluster.

@@ -6,9 +6,9 @@ import jsonlines
 def main():
     llm = Lamini(model_name="meta-llama/Meta-Llama-3-8B-Instruct")
 
-    dataset = list(load_training_data()) * 10
+    dataset = list(load_tuning_data()) * 10
 
-    llm.train(
+    llm.tune(
         data=dataset,
         finetune_args={
             "max_steps": 300,
@@ -18,7 +18,7 @@ def main():
     )
 
 
-def load_training_data():
+def load_tuning_data():
     path = "/app/lamini-earnings-sdk/data/generated_q_a.jsonl"
 
     limit = 10
