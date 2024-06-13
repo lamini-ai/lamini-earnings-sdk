@@ -6,6 +6,7 @@
 [![Latest Release](https://img.shields.io/badge/Latest%20Version-1.4.3-blue?logo=github)](https://github.com/lamini-ai/lamini-sdk/commits/main)
 [![GitHub License](https://img.shields.io/github/license/lamini-ai/lamini)](https://github.com/lamini-ai/lamini-sdk/blob/main/LICENSE)</div>
 
+# This repo has been deprecated, please refer to https://github.com/lamini-ai/lamini-sdk
 ## Lamini SDK
 
 In this SDK, we include tutorials for achieving high-quality results with Language Models (LLMs) like Llama3 using Lamini.</br>  With Lamini, you own the LLM you create -- you can deploy it or release it open source.</br>  This SDK teaches effective tools for building LLMs.</br>  We strongly encourage following the SDK *in order* as the concepts build on each other and are sorted by difficulty.
@@ -63,4 +64,3 @@ Lamini is the LLM platform for developers to specialize LLMs on their own data a
 </div>
 
 --------
-
